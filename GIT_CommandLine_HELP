@@ -1,0 +1,5 @@
+1. git clone https://github.com/JMazing35/IT350.git
+2. git add -A
+3. git commit -m "Statement about update."
+4. git push origin master
+
