@@ -103,15 +103,16 @@ span.psw {
 <center>
 <h1>Buy My Apple</h1>
 <h2>Admin Webpage</h2>
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button onclick="document.getElementById('MODAL').style.display='block'" style="width:auto;">Login</button>
 </center>
 
 
 
 <?php
 
+$loginForm = <<<EOD
 
-<div id="id01" class="modal">
+<div id="MODAL" class="modal">
   
   <form class="modal-content animate" name="login" id="login" method="POST" action="/action_page.php">
     <div class="container">
@@ -131,12 +132,18 @@ span.psw {
   </form>
 </div>
 
-?>
+EOD;
+$message = $_GET['msg'];
+if ($message != '') echo '<p>'.$msg.'</p>';
+echo "<h1>Please enter your login information </h1>";
+echo $loginForm;
+
+?> 
 
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modal = document.getElementById('MODAL');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -149,7 +156,7 @@ window.onclick = function(event) {
 function ClearFields(){
         document.getElementById("userName").value = ''; //clear textfield for userName
         document.getElementById("password").value = ''; //clear textfield for password 
-        document.getElementById('id01').style.display='none'; //dismiss the modal
+        document.getElementById('MODAL').style.display='none'; //dismiss the modal
 }
 </script>
 
