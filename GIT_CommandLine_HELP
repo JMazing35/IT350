@@ -17,10 +17,34 @@ For Admin Page: User can login, change password, add products, delete products, 
  admin
  DMitch
 
+go team go - 
 
  mysql -u root -p
 
  SHOW DATABASES;
 
  https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
+
+VM Set up:
+
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
+
+sudo chmod -R 755 /var/www
+sudo chmod -R 755 /var/www
+
+sudo apt-get install git
+
+sudo apt-get install mysql-server (go team go)
+
+sudo nano /etc/apache2/sites-enabled/000-default.conf 
+ - change to /var/www/html to /var/www/IT350
+ - clone repo into /var/www
+ 
+ git clone https://github.com/JMazing35/IT350.git
+ 
+ sudo service apache2 restart
+ 
 
