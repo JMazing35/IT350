@@ -1,4 +1,5 @@
 <?php
+include 'dbConnect.php';
 
 session_start();
 define(ADMIN, $_SESSION['name']);
