@@ -80,4 +80,10 @@ CREATE TABLE department (
 	FOREIGN KEY (manager_employee_id) REFERENCES employee(employee_id) 
 );
 
+CREATE TABLE employee (
+	username VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	Logged_in BOOLEAN default 0
+);
 
+INSERT INTO 'employee' ('username', 'password', 'Logged_in') VALUES ('aaaaa', 'aaaaa', 0);
