@@ -1,5 +1,8 @@
 <?php
 include "dbConnect.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 
 #session_start();
 $error='';
@@ -30,16 +33,19 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
  //define $username and $password
 	$username =$_POST['username'];
 	$password =$_POST['password'];
+	print $username;
+	print $password;
 
 	echo "IN ELSE STATEMENT <br>";
 
-	$dbConnect = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+	/*$dbConnect = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
 
 	if (!$dbConnect) {
-		die('Error connecting to Database'.mysqli_connect_error());
+		echo "Couldn't connect to DB.";
+		die;
 	} else {
 		echo "CONNECTED SUCCESSFULLY!!";
-	}
+	}*/
 
 
 	//protect against sql injection
@@ -49,16 +55,28 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 	#$PASSWORD = mysql_real_escape_string($pw);
 
 	#$db = mysql_select_db($dbName, $connection);
+	$sql = "SELECT * FROM employee WHERE username = ? AND password = ?";
+
+	$stmt = $dbConnect->prepare($sql);
+	print_r($stmt);
+	$stmt->bind_param("ss", $username, $password);
+	$stmt->execute();
+
+	$result = $stmt->get_result();
 
 
 
-	$result = mysqli_query($dbConnect, "SELECT * FROM employee WHERE username = '$username' AND password = '$password'");
 
-	$countNumRows = mysqli_num_rows($result);
+	#$result = mysqli_query($dbConnect, "SELECT * FROM employee WHERE username = '$username' AND password = '$password'");
 
-	echo "The number of rows that match is: ".$countNumRows."<br>";
 
-	if($countNumRows == 1){
+	#print "THIS IS THE RESULT from Query".$result;
+	#$result1 = mysqli_result($result);
+	#$countNumRows = mysqli_fetch_assoc($result1);
+
+	#echo "The number of rows that match is: ".$countNumRows."<br>";
+
+	if($row = $result->fetch_assoc()){
 		#session_register("admin");
 		#session_register("password");
 		#$_SESSION['name'] = $username;
@@ -70,6 +88,21 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 		echo $message;
 		header("location:adminLoginPage.php");
 	} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	/*
@@ -92,8 +125,9 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 	} else {
 		$error = "Username or password is invalid";
 	}*/
-	mysqli_close($dbConnect); //Closing connection
+	#mysqli_close($result);
 	}
 
 
 ?>
+
