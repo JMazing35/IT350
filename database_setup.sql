@@ -29,6 +29,7 @@ CREATE TABLE order (
 
 CREATE TABLE product (
 	serial_number VARCHAR(255) PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
 	price DECIMAL(7,2) NOT NULL,
 	color VARCHAR (20) NOT NULL, 
 	decription VARCHAR (255) NOT NULL,
@@ -86,4 +87,4 @@ CREATE TABLE employee (
 	Logged_in BOOLEAN default 0
 );
 
-INSERT INTO 'employee' ('username', 'password', 'Logged_in') VALUES ('aaaaa', 'aaaaa', 0);
+INSERT INTO employee VALUES ('aaaaa', 'aaaaa', 0);
