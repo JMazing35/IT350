@@ -19,7 +19,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <br>
 <br>
 <br>
-	
+<center>
 <h1>List of Employees</h1>
 <table class="list" border="1" name="employee">
 	<tr>
@@ -52,7 +52,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 		</tr>
 	<?php } ?>
 </table>
-	
+</center>	
 <br>
 <br>
 <br>
@@ -119,7 +119,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <br>
 <br>
 
-
+<center>
 <h1>List of Products</h1>
 <table class="list" border="1" name="Products">
 	<tr>
@@ -149,7 +149,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 		</tr>
 	<?php } ?>
 </table>
-
+</center>
 <br>
 <br>
 <br>
@@ -196,7 +196,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <br>
 <br>
 
-
+<center>
 <h1>List of Customers</h1>
 <table class="list" border="1" name="customers">
 	<tr>
@@ -232,7 +232,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 		</tr>
 	<?php } ?>
 </table>
-
+</center>
 </body>
 </html>
 
