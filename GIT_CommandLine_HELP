@@ -39,6 +39,9 @@ sudo apt-get install git
 
 sudo apt-get install mysql-server (go team go)
 
+
+added [mysqld] at top of /etc/mysql/my.cnf
+
 sudo nano /etc/apache2/sites-enabled/000-default.conf 
  - change to /var/www/html to /var/www/IT350
  - clone repo into /var/www
