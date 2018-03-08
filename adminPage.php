@@ -8,7 +8,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 
 <!DOCTYPE html>
 <html>
-<body>
+<body bgcolor="#66ccff>
 
 <center>
 <h1>Buy My Apple</h1>
