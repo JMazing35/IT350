@@ -108,19 +108,16 @@ span.psw {
 
 
 
-<?php
-
-$loginForm = <<<EOD
 
 <div id="MODAL" class="modal">
   
-  <form class="modal-content animate" name="login" id="login" method="POST" action="/action_page.php">
+  <form class="modal-content animate" name="login" id="login" method="POST" action="/verifyLogin.php">
     <div class="container">
       <label for="userName"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="userName" required>
+      <input type="text" placeholder="Enter Username" id="username" name="username" required>
 
       <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" id="password" required>
+      <input type="password" placeholder="Enter Password" name="password" id="password" required>
         
       <button type="submit">Login</button>
     </div>
@@ -131,14 +128,7 @@ $loginForm = <<<EOD
     </div>
   </form>
 </div>
-
-EOD;
-$message = $_GET['msg'];
-if ($message != '') echo '<p>'.$msg.'</p>';
-echo "<h1>Please enter your login information </h1>";
-echo $loginForm;
-
-?> 
+ 
 
 
 <script>
@@ -154,7 +144,7 @@ window.onclick = function(event) {
 }
 
 function ClearFields(){
-        document.getElementById("userName").value = ''; //clear textfield for userName
+        document.getElementById("username").value = ''; //clear textfield for userName
         document.getElementById("password").value = ''; //clear textfield for password 
         document.getElementById('MODAL').style.display='none'; //dismiss the modal
 }

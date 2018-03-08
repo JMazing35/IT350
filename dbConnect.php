@@ -1,8 +1,9 @@
 <?php
 $dbHost = 'localhost';
-$dbUser = 'username';
-$dbPassword = 'password';
-$dbName = 'Database Name';
-$dbConnect = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName) or die('Error connecting to Database');
+$dbUser = 'justin35';
+$dbPassword = 'gojazz';
+$dbName = 'BuyMyApple';
+$dbConnect = new mysqli($dbHost, $dbUser, $dbPassword, $dbName) or die('Error connecting to Database');
+#$test = mysqli_query($dbConnect, "UPDATE employee SET Logged_in = 1;");
 ?>
 
