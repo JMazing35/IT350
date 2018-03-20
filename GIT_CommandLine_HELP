@@ -56,6 +56,7 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
  Account: justin_giboney@byu.edu jgiboney
  
  Section 2: User site:
+ sudo apt-get install python-pip
  pip install pymongo
  
  
