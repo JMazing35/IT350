@@ -1,7 +1,12 @@
 <?php
 include 'dbConnect.php';
 session_start();
-if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
+#include 'verifyCustomerLogin';
+#if($_SESSION['Logged_in'] != 1) { header("location: verifyCustomerLogin.php");}
+#print $_SESSION['Logged_in_user'];
+#print " IS THE LOGGED IN USER'S NAME <br><br>";
+#print $_SESSION['Logged_in_user'];
+
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +14,16 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 	<body bgcolor="#66ccff">
 	<center>
 	<h1>Buy My Apple</h1>
-	<p><a href="logoutPage.php">Logout?</a></p>
+	<?php
+		if($_SESSION['Logged_in_user']){
+			print "Welcome ".$_SESSION['Logged_in_user'];
+			print "<br><p><a href='logoutPage.php'>Logout?</a></p>";
+		} else {
+			print "	<p><a href='customerLoginPage.html'>Login?</a></p>";
+			print " <br><p><a href='registerCustomer.html'>Register</a></p>";
+		}
+	?>
+
 	</center>
 	<br>
 	<br>
