@@ -39,12 +39,6 @@ sudo apt-get install git
 
 sudo apt-get install mysql-server (go team go)
 
-
-added [mysqld] at top of /etc/mysql/my.cnf
-
-sudo service mysqld stop
-sudo service mysqld start
-
 sudo nano /etc/apache2/sites-enabled/000-default.conf 
  - change to /var/www/html to /var/www/IT350
  - clone repo into /var/www
@@ -52,12 +46,5 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
  git clone https://github.com/JMazing35/IT350.git
  
  sudo service apache2 restart
- 
- Account: justin_giboney@byu.edu jgiboney
- 
- Section 2: User site:
- sudo apt-get install python-pip
- pip install pymongo
- 
  
 

@@ -7,7 +7,7 @@ CREATE TABLE customer (
 	city VARCHAR(255) NOT NULL,
 	state VARCHAR(255) NOT NULL,
 	zip INT(9) NOT NULL,
-	phone VARCHAR(255) NOT NULL,
+	phone INT(20) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	newsletter BOOLEAN default 0,
@@ -70,7 +70,7 @@ CREATE TABLE employee (
 	city VARCHAR(255) NOT NULL,
 	state VARCHAR(255) NOT NULL,
 	zip INT(9) NOT NULL,
-	phone VARCHAR(255) NOT NULL,
+	phone INT(20) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL
 );
@@ -109,7 +109,7 @@ CREATE TABLE customer (
 	city VARCHAR(255) NOT NULL,
 	state VARCHAR(255) NOT NULL,
 	zip INT(9) NOT NULL,
-	phone VARCHAR(255) NOT NULL,
+	phone INT(20) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	newsletter BOOLEAN default 0,

@@ -81,31 +81,31 @@ print "</html>"
 
 if form.getvalue('first_name'):
     first_name = form.getvalue('first_name')
-    print first_name
+#    print first_name
 if form.getvalue('last_name'):
     last_name  = form.getvalue('last_name')
-    print last_name
+#    print last_name
 if form.getvalue('street'):
     street = form.getvalue('street')
-    print street
+#    print street
 if form.getvalue('city'):
     city = form.getvalue('city')
-    print city
+#    print city
 if form.getvalue('state'):
     state = form.getvalue('state')
-    print state
+#    print state
 if form.getvalue('zipCode'):
     zipCode = form.getvalue('zipCode')
-    print zipCode
+#    print zipCode
 if form.getvalue('phone'):
     phone = form.getvalue('phone')
-    print phone
+#    print phone
 if form.getvalue('email'):
     email = form.getvalue('email')
-    print email
+#    print email
 if form.getvalue('password'):
     password = form.getvalue('password')
-    print password
+#    print password
 
 
 #https://codehandbook.org/pymongo-tutorial-crud-operation-mongodb/
@@ -126,17 +126,15 @@ try:
         "password":password
         })
     print '\nInserted data successfully\n'
+    print "<p>\nYou have registered successfully. Navigate to <a href='/homePage.php'>BuyMyApple</a> to start shopping!!</p>"
 
     #Redirect user to BuyMyApple homepage (?)
     #webbrowser.open('homepage.html')  # Go to example.com
 
 
 except Exception, e:
-    print str(e)
+    #print str(e)
     print "No record was added"
 
 # For Session check, why not use a logged_in variable that is set when the user creates an account or when the user logs in. And then change the logged_in variable to false when they log out.
-
-
-
 
