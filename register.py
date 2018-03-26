@@ -2,6 +2,7 @@
 #https://docs.python.org/2/library/cgi.html
 #https://www.youtube.com/watch?v=x_1rgQwk5fM
 
+#sudo -H pip install pymongo
 
 #Run the following commands to install pymongo: sudo apt-get install python-pip, sudo pip install pymongo
 import pymongo
