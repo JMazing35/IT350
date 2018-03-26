@@ -47,4 +47,15 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
  
  sudo service apache2 restart
  
+ - http://programmerblog.net/php-mongodb-tutorial/
+- 
+- https://stackoverflow.com/questions/22885593/importerror-no-module-named-pymongo?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+- 
+-https://www.linux.com/blog/configuring-apache2-run-python-scripts
+-
+-https://www.tutorialspoint.com/python3/python_cgi_programming.htm
+-
+-https://www.youtube.com/watch?v=ELFdP7eEZ5w
+ 
+-https://codehandbook.org/pymongo-tutorial-crud-operation-mongodb/
 
