@@ -75,17 +75,33 @@ if(empty($_POST['email']) || empty($_POST['password'])) {
 	foreach ($cursor as $document){
 		$emailFromMongo = $document->email;
 		$passwordFromMongo = $document->password;
-		$nameFromMongo = $document->first_name;
-		print $emailFromMongo;
-		print "<br>";
-		print $nameFromMongo;
-		$_SESSION['Logged_in_user'] = $nameFromMongo;
-		print $_SESSION['Logged_in_user'];
 
 		if ($emailFromMongo == $username && $passwordFromMongo == $password){
-			print "We have a match.";
-			$_SESSION['Logged_in_user'] = $nameFromMongo; //Initializing Session
+			
+			//Obtain customer information from MongoDB
+			$firstNameFromMongo = $document->first_name;
+			$lastNameFromMongo = $document->last_name;
+			$streetFromMongo = $document->street;
+			$cityFromMongo = $document->city;
+			$stateFromMongo = $document->state;
+			$zipFromMongo = $document->zipCode;
+			$emailFromMongo = $document->email;
+			$phoneFromMongo = $document->phone;
+			$id = $document->_id;
+
+			//Set session variables for user
+			$_SESSION['Logged_in_user'] = $firstNameFromMongo;
 			$_SESSION["Logged_in"] = 1;
+			$_SESSION['ID'] = $id;
+			$_SESSION['first_name'] = $firstNameFromMongo;
+			$_SESSION['last_name'] = $lastNameFromMongo;
+			$_SESSION['street'] = $streetFromMongo;
+			$_SESSION['city'] = $cityFromMongo;
+			$_SESSION['state'] = $stateFromMongo;
+			$_SESSION['zip'] = $zipFromMongo;
+			$_SESSION['email'] = $emailFromMongo;
+			$_SESSION['phone'] = $phoneFromMongo;
+
 			header("location:homePage.php");	
 		} else {
 			header("location:customerLoginPage.html");
