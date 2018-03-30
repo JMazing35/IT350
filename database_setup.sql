@@ -70,7 +70,7 @@ CREATE TABLE employee (
 	city VARCHAR(255) NOT NULL,
 	state VARCHAR(255) NOT NULL,
 	zip INT(9) NOT NULL,
-	phone INT(20) NOT NULL,
+	phone VARCHAR(255) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL
 );
@@ -117,4 +117,4 @@ CREATE TABLE customer (
 );
 
 INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, email, password) 
-VALUES ('Kennadie', 'Brockbank', '87 N 900 E', 'American Fork', 'Utah', 84003, 8016649191, 'yourfirstcustomer@gmail.com', 'aaaaa');
+VALUES ('Taci', 'Bank', 'Homeless', 'American Fork', 'Utah', 84003, 8014800909, 'tacibank@gmail.com', 'taci123');

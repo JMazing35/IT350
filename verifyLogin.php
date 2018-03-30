@@ -94,14 +94,14 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 		header("location:adminLoginPage.php");
 	} 
 
+	#mysql_close($dbConnect);
 
 
 
 
 
 
-
-
+	
 
 
 

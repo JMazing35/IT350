@@ -1,5 +1,7 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<!--https://www.w3schools.com/howto/howto_css_login_form.asp-->
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -102,22 +104,24 @@ span.psw {
 
 <center>
 <h1>Buy My Apple</h1>
-<h2>Admin Webpage</h2>
-<button onclick="document.getElementById('MODAL').style.display='block'" style="width:auto;">Login</button>
+<h2>Customer Login Page</h2>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 </center>
 
 
 
+<?php
 
-<div id="MODAL" class="modal">
+
+<div id="id01" class="modal">
   
-  <form class="modal-content animate" name="login" id="login" method="POST" action="/verifyLogin.php">
+  <form class="modal-content animate" name="login" id="login" method="POST" action="/verifyCustomerLogin.php">
     <div class="container">
-      <label for="userName"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="username" name="username" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" id="email" name="email" required>
 
       <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" id="password" required>
+      <input type="password" placeholder="Enter Password" id="password" name="password" required>
         
       <button type="submit">Login</button>
     </div>
@@ -128,12 +132,13 @@ span.psw {
     </div>
   </form>
 </div>
- 
+
+?>
 
 
 <script>
 // Get the modal
-var modal = document.getElementById('MODAL');
+var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -144,9 +149,9 @@ window.onclick = function(event) {
 }
 
 function ClearFields(){
-        document.getElementById("username").value = ''; //clear textfield for userName
+        document.getElementById("email").value = ''; //clear textfield for userName
         document.getElementById("password").value = ''; //clear textfield for password 
-        document.getElementById('MODAL').style.display='none'; //dismiss the modal
+        document.getElementById('id01').style.display='none'; //dismiss the modal
 }
 </script>
 

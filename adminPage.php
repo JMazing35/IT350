@@ -8,7 +8,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 
 <!DOCTYPE html>
 <html>
-<body>
+<body bgcolor="#66ccff">
 
 <center>
 <h1>Buy My Apple</h1>
@@ -19,9 +19,9 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <br>
 <br>
 <br>
-	
+<center>
 <h1>List of Employees</h1>
-<table class="list" name="employee">
+<table class="list" border="1" name="employee">
 	<tr>
 		<th>Employee ID</th>
 		<th>First Name</th>
@@ -52,8 +52,10 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 		</tr>
 	<?php } ?>
 </table>
-	
-<br>
+</center>	
+<center>
+	<p>For Employee List to Distribute internally, click <a href="employeeList.php">here</a></p>
+</center>
 <br>
 <br>
 <h3>Remove Employee by ID:</h3>
@@ -68,10 +70,6 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
     </div>
   </form>
 </div>
-
-<br>
-<br>
-<br>
 <h3>Add Employee</h3>
 <div>
   <form name="addEmployee" method="POST" action="/addEmployee.php">
@@ -110,18 +108,10 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
     </div>
   </form>
 </div>
-
-
-
-
-
 <br>
-<br>
-<br>
-
-
+<center>
 <h1>List of Products</h1>
-<table class="list" name="Products">
+<table class="list" border="1"  name="Products">
 	<tr>
 		<th>Serial Number</th>
 		<th>Name</th>
@@ -149,7 +139,8 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 		</tr>
 	<?php } ?>
 </table>
-
+<p>To place items on sale (25% Off), enter: CALL sale25() from BuyMyApple database. To remove items from sale, enter: CALL removeSale().</p>
+</center>
 <br>
 <br>
 <br>
@@ -195,43 +186,6 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <br>
 <br>
 <br>
-
-
-<h1>List of Customers</h1>
-<table class="list" name="customers">
-	<tr>
-		<th>Customer ID</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Street</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Zip</th>
-		<th>Phone</th>
-		<th>Email</th>
-		<th>Newsletter</th>
-		<th>Registration Date</th>
-	</tr>
-	<?php
-	$sqlProduct = "SELECT * FROM customer";
-	$dataSet = mysqli_query($dbConnect, $sqlProduct);
-	
-	while ($data = mysqli_fetch_assoc($dataSet)) { ?>
-		<tr>
-			<td><?php echo ($data['customer_id']); ?></td>
-			<td><?php echo ($data['first_name']); ?></td>
-			<td><?php echo ($data['last_name']); ?></td>
-			<td><?php echo ($data['street']); ?></td>
-			<td><?php echo ($data['city']); ?></td>
-			<td><?php echo ($data['state']); ?></td>
-			<td><?php echo ($data['zip']); ?></td>
-			<td><?php echo ($data['phone']); ?></td>
-			<td><?php echo ($data['email']); ?></td>
-			<td><?php echo ($data['newsletter']); ?></td>
-			<td><?php echo ($data['registration_date']); ?></td>
-		</tr>
-	<?php } ?>
-</table>
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 <?php
+
+
 $dbHost = '192.168.50.12:3306';
 $dbUser = 'justin35';
 $dbPassword = 'gojazz';
@@ -7,3 +9,6 @@ $dbConnect = new mysqli($dbHost, $dbUser, $dbPassword, $dbName) or die('Error co
 #$test = mysqli_query($dbConnect, "UPDATE employee SET Logged_in = 1;");
 ?>
 
+<?php 
+phpinfo(); 
+?>
