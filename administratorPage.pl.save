@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+# PERL MODULES
+
+use Mysql;
+
+# HTTP HEADER
+print "Content-type: text/html \n\n";
+
+# MYSQL CONFIG VARIABLES
+$host = "localhost";
+$database = "BuyMyApple";
+$user = "root";
+$pw = "gojazz";
+
+# PERL CONNECT()
+$connect = Mysql->connect($host, $database, $user, $pw);
+
+print "<html>";
+print "<body>";
+print "<h1>Buy My Apple DB Owner Page</h1>";
+print "<br>";
+
+
+# LISTDBS()
+@databases = $connect->listdbs;
+foreach $database (@databases) {
+	print "$database<br />";
+}

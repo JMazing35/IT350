@@ -6,7 +6,6 @@ ini_set('display_errors', 1);
 session_start();
 
 
-#session_start();
 $error='';
 
 
@@ -84,7 +83,7 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 
 		#session_register("admin");
 		#session_register("password");
-		#$_SESSION['name'] = $username;
+		$_SESSION['adminEmail'] = $username;
 		#$sqlUpdate = "UPDATE employee SET 'Logged_in' = 1 WHERE Username = '". $username. "';";
 		mysqli_query($dbConnect, "UPDATE employee SET Logged_in = 1 WHERE email = '$username' AND password ='$password'");
 		header("location:adminPage.php");
@@ -92,45 +91,8 @@ if(empty($_POST['username']) || empty($_POST['password'])) {
 		$message = "Wrong username or password, try again.";
 		echo $message;
 		header("location:adminLoginPage.php");
-	} 
+	}
 
-	#mysql_close($dbConnect);
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-	/*
-
-	$sha1password = sha1($password);
-
-	//SQL query to fetch information of registered users and finds user match.
-	$query = mysqli_query("SELECT * FROM employee WHERE Password='$password' AND Username = '$username'", $dbConnect);
-	$sql = "UPDATE employee SET 'Logged_in' = 1 WHERE Username = '". $username. "';";
-	//$updatequery = mysql_query($sql);
-	$rows = mysqli_num_rows($query);
-
-	if($rows) {
-		$_SESSION['login_user']=$username; //Initializing Session
-		$_SESSION["Logged_in"] = 1;
-		//$_SESSION['userID'] = 
-		$updatequery = mysqli_query($sql);
-		//die($_SESSION['login_user']);
-		header("location:adminPage.php"); //Redirecting to admin  page
-	} else {
-		$error = "Username or password is invalid";
-	}*/
-	#mysqli_close($result);
 	}
 
 

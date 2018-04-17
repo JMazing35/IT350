@@ -14,6 +14,7 @@ if($_SESSION['Logged_in'] == 0) { header("location: adminLoginPage.php");}
 <h1>Buy My Apple</h1>
 <h2>Welcome to the Admin Webpage</h2>
 <p><a href="logoutPage.php">Logout?</a></p>
+<p><a href="administratorPage.pl">DB Administrator Page</a></p>
 </center>
 
 <br>

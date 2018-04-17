@@ -3,13 +3,13 @@ $connection = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 #$db = $connection->BuyMyApple;
 #$collection = $db->customers;
 if (session_start()){
-	print "SESSION HAS BEEN STARTED";
+#	print "SESSION HAS BEEN STARTED";
 }else {
-	print "SESSION DID NOT START";
+#	print "SESSION DID NOT START";
 }
 
 if ($connection){
-	print "it works mongodb driver<br>";
+#	print "it works mongodb driver<br>";
 }
 
 $error='';
@@ -40,7 +40,7 @@ if(empty($_POST['email']) || empty($_POST['password'])) {
 	foreach ($cursor as $document){
 		$emailFromMongo = $document->email;
 		$passwordFromMongo = $document->password;
-
+		#print "IN THE FOR EACH STATEMENT!!<br>";
 		if ($emailFromMongo == $validEmail && $passwordFromMongo == $password){
 			//Obtain customer information from MongoDB
 			$firstNameFromMongo = $document->first_name;
@@ -66,11 +66,14 @@ if(empty($_POST['email']) || empty($_POST['password'])) {
 			$_SESSION['email'] = $emailFromMongo;
 			$_SESSION['phone'] = $phoneFromMongo;
 			#print $_SESSION['Logged_in_user'];
-			#print "TESTINGSSSSSSSSSSSSSS";
+			#print "After Setting Session Variables<br>";
 			header("location:homePage.php");	
 		} else {
-			header("location:customerLoginPage.php");
+			#print "In THE ELSE STATEMENT BEFORE TRANSFER TO LOGIN PAGE.<br>";
+			#header("location:customerLoginPage.php");
 		}
 	}
-	}
+}
+
+print "<center><h2>Invalid Credentials! Navigate to <a href='customerLoginPage.php'>Login Page</a> to try again!</h2></center>";
 ?>
